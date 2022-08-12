@@ -35,7 +35,7 @@ git@github.com:Ogaga01/rails-blog-app.git
 ```
 
 ### Install
-run: `npm i`
+run: `rails server`
 
 
 ### Usage
@@ -43,7 +43,7 @@ run: `npm i`
 ### Run tests
 
 ### Deployment
-run: ```npm start```
+login: ```localhost:3000```
 
 
 
