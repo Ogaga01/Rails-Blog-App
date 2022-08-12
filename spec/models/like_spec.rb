@@ -11,4 +11,8 @@ RSpec.describe Like, type: :model do
   it 'update likes counter' do
     expect(user.likes.length).to eq 1
   end
+
+  it 'update post like counter' do
+    expect(subject.post.likes_counter).to eq(1)
+  end
 end
