@@ -6,7 +6,7 @@ RSpec.describe Like, type: :model do
   post = Post.new(user_id: user, title: 'Hello Elijah', text: 'How is mum')
   post.save
 
-  user.likes.create(post_id: post, text: "I love the movie")
+  user.likes.create(post_id: post, text: 'I love the movie')
 
   it 'update likes counter' do
     expect(user.likes.length).to eq 1
