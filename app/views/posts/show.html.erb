@@ -1,7 +1,7 @@
 <section class="p-sm mb-section">
   <div class="post-detail border d-flex-2">
     <div class="post-detail-bdy d-flex">
-      <h3>Post #<%= @post.id%> by <%= @post.author.name %></h3>
+      <h3>Post #<%= @post.id%> by <%= @post.user.name %></h3>
       <div class="d-flex mb-sm2">
         <span class="comments mr-sm sp-fs">Comments: <%= @post.comments_counter || 0%>, </span>
         <span class="likes sp-fs">Likes: <%= @post.likes_counter || 0 %> </span>
@@ -12,7 +12,7 @@
   <ul class="comment d-flex-2 border">
     Comments:
     <% @comments.each do |comment| %>
-      <li class="user-bio_div d-flex-2"><%= comment.author.name%>: <%= comment.text %></li>
+      <li class="user-bio_div d-flex-2"><%= comment.user.name%>: <%= comment.text %></li>
     <% end %>
   </ul>
 </section>

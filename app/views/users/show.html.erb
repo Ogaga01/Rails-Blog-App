@@ -7,7 +7,7 @@
     <div class="user-show user-bdy d-flex">
       <div class="show-pc user-pc d-flex">
         <h2 class="fs-sm"><%= @user.name %></h2>
-        <p class="post-count">Number of posts: <%= @user.posts_counter || 0 %></p>
+        <p class="post-count">Number of posts: <%= @user.post_counter || 0 %></p>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
 
   <div class="">
     <ul class="user-post-cont d-flex-2">
-      <% @user.recent_posts.each_with_index do |post, index| %>
+      <% @user.most_recent_posts.each_with_index do |post, index| %>
         <li class="user-post-li user-bio_div border mb-sm d-flex-2">
           <h3>Post #<%= index + 1 %> </h3>
           <p><%= post.text %></p>

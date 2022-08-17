@@ -7,7 +7,7 @@
     <div class="user-bdy d-flex">
       <a class="user-pc d-flex" href="/users/<%= @user.id %>/posts">
         <h2 class="fs-sm"><%= @user.name%></h2>
-        <p class="post-count">Number of posts: <%= @user.posts_counter || 0 %></p>
+        <p class="post-count">Number of posts: <%= @user.post_counter || 0 %></p>
       </a>
     </div>
   </div>
@@ -28,8 +28,8 @@
       <ul class="comments user-comment d-flex-2">
         Comments:
         <div class="border mb-sm">
-          <% post.recent_five_comments.each do |comment| %>
-            <li class="user-bio_div d-flex-2"><%= comment.author.name %>: <%= comment.text %> </li>
+          <% post.most_recent_comments.each do |comment| %>
+            <li class="user-bio_div d-flex-2"><%= comment.user.name %>: <%= comment.text %> </li>
           <% end %>
         </div>
       </ul>
