@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   database: Rails_Blog_App_development
-  username: 'DELL LATITUDE'
+  username: 'camile'
   password: '0000'
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -59,7 +59,7 @@ development:
 test:
   <<: *default
   database: Rails_Blog_App_test
-  username: 'DELL LATITUDE'
+  username: 'camile'
   password: '0000'
 
 # As with config/credentials.yml, you never want to store sensitive information,
