@@ -15,11 +15,6 @@ RSpec.describe 'Users pages test', type: :feature do
       expect(page).to have_content('Ogaga')
     end
 
-    it 'Should set the link of the picture to the img src' do
-      visit '/'
-      expect(page).to have_css("img[src*='/assets/tom.png']")
-    end
-
     it 'Should display the total post number of users' do
       visit '/'
       expect(page).to have_content('Number of posts: 0')
@@ -87,12 +82,12 @@ RSpec.describe 'Users pages test', type: :feature do
 
     it 'Should display a button with "See all posts" text' do
       visit user_path(@user_first.id)
-      expect(page).to have_content('See all posts')
+      expect(page).to have_content('see all post')
     end
 
     it 'Should redirect to post page after clicking on "See all posts"' do
       visit user_path(@user_first.id)
-      click_link 'See all posts'
+      click_link 'see all post'
       expect(page).to have_current_path(user_posts_path(@user_first.id))
     end
   end

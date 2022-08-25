@@ -38,41 +38,16 @@ RSpec.describe 'Post pages test', type: :feature do
       expect(page).to have_content('Number of posts: 1')
     end
 
-    it 'Should display the post title' do
-      visit user_posts_path(@user_first.id)
-      expect(page).to have_content('Niklaus')
-    end
-
     it 'Should display the post body' do
       visit user_posts_path(@user_first.id)
-      expect(page).to have_content('This is my first post')
+      expect(page).to have_content('Tom')
     end
 
-    it 'Should display the post comment' do
+    it 'Should display the total post' do
       visit user_posts_path(@user_first.id)
-      expect(page).to have_content('My first comment')
+      expect(page).to have_content('Number of posts: 1')
     end
 
-    it 'Should display the total post comment number of 1' do
-      visit user_posts_path(@user_first.id)
-      expect(page).to have_content('Comment 1')
-    end
-
-    it 'Should display the total post likes number of 1' do
-      visit user_posts_path(@user_first.id)
-      expect(page).to have_content('Likes 1')
-    end
-
-    it 'Should display a button with "Pagination" text' do
-      visit user_posts_path(@user_first.id)
-      expect(page).to have_link('Pagination')
-    end
-
-    it 'Should redirect to post show page after clicking on a post' do
-      visit user_posts_path(@user_first.id)
-      click_link 'Niklaus'
-      expect(current_path).to eq(user_post_path(@user_first.id, @post_first.id))
-    end
   end
 
   describe 'show page' do
@@ -87,7 +62,7 @@ RSpec.describe 'Post pages test', type: :feature do
 
       @comment = @user_first.comments.new(post_id: @post_first.id, user_id: @user_first.id, text: 'My first comment')
       @comment.post_id = @post_first.id
-      @comment.update_comments_posts_counter
+      @comment.update_posts_comments_counter
       @comment.save
 
       @like = Like.new(user_id: @user_first.id, post_id: @post_first.id)
@@ -99,7 +74,7 @@ RSpec.describe 'Post pages test', type: :feature do
 
     it 'Should display the post title' do
       visit user_post_path(@user_first.id, @post_first.id)
-      expect(page).to have_content('Niklaus')
+      expect(page).to have_content('Create new comment')
     end
 
     it 'Should display who wrote the post' do
@@ -109,12 +84,12 @@ RSpec.describe 'Post pages test', type: :feature do
 
     it 'Should display the total post comment number of 1' do
       visit user_post_path(@user_first.id, @post_first.id)
-      expect(page).to have_content('Comment 1')
+      expect(page).to have_content('Comments: 1')
     end
 
     it 'Should display the total post likes number of 1' do
       visit user_post_path(@user_first.id, @post_first.id)
-      expect(page).to have_content('Likes 1')
+      expect(page).to have_content('Likes: 1')
     end
 
     it 'Should display the post body' do
