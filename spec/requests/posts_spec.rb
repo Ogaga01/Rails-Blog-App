@@ -18,8 +18,8 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to render_template('index')
     end
 
-    it 'should include "Pagination' do
-      expect(response.body).to include('Pagination')
+    it 'should include "Tom' do
+      expect(response.body).to include('Tom')
     end
   end
 
