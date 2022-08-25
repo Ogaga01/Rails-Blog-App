@@ -47,7 +47,6 @@ RSpec.describe 'Post pages test', type: :feature do
       visit user_posts_path(@user_first.id)
       expect(page).to have_content('Number of posts: 1')
     end
-
   end
 
   describe 'show page' do
