@@ -13,7 +13,7 @@ RSpec.describe 'Post pages test', type: :feature do
 
       @comment = @user_first.comments.new(post_id: @post_first.id, user_id: @user_first.id, text: 'My first comment')
       @comment.post_id = @post_first.id
-      @comment.update_comments_posts_counter
+      @comment.update_posts_comments_counter
       @comment.save
 
       @like = Like.new(user_id: @user_first.id, post_id: @post_first.id)
@@ -25,9 +25,7 @@ RSpec.describe 'Post pages test', type: :feature do
 
     it 'Should set the link of the picture to the img src' do
       visit user_posts_path(@user_first.id)
-      all('img').each do |i|
-        expect(i[:src]).to eq('/assets/tom.png')
-      end
+      expect(page).to have_css("img[src*='/assets/tom.png']")
     end
 
     it 'Should display the user name' do
