@@ -23,10 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: Rails_Blog_App_dev
-  username: 'camile'
+  database: Rails_Blog_App_development
+  username: 'DELL LATITUDE'
   password: '0000'
-  host: localhost
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
