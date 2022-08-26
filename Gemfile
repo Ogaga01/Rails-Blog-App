@@ -81,3 +81,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
 end
+
+gem 'devise'
+
+gem 'letter_opener'
