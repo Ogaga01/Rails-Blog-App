@@ -11,8 +11,8 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('index')
     end
 
-    it 'should include "Here is a list of users" on the screen' do
-      expect(response.body).to include('Here is a list of users')
+    it 'should include "Number of posts" on the screen' do
+      expect(response.body).to include('Number of posts: 0')
     end
   end
 
@@ -26,8 +26,8 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('show')
     end
 
-    it 'should include "Here the details of a user: Name, Photo, Bio, and Posts" on the screen' do
-      expect(response.body).to include('Here the details of a user: Name, Photo, Bio, and Posts')
+    it 'should include "Here the details of a user: Always and forever' do
+      expect(response.body).to include('Always and forever')
     end
   end
 end
