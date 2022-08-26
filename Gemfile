@@ -78,3 +78,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 group :development, :test do
   gem 'rspec-rails'
 end
+
+gem 'devise'
+
+gem 'letter_opener'
